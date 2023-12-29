@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popover</title>
+</head>
+<body>
+    <!-- Bouton de la modale -->
+    <button type="button" popovertarget="oh">Cliquer</button>
+
+    <!-- Modale -->
+    <div id="oh" popover>
+        <section>
+            <img src="./images/oh.png" />
+            <!-- Boutoun pour fermer la modale -->
+            <button type="button" popovertarget="oh" 
+                popovertargetaction="hide">Fermer</button>
+        </section>
+    </div>
+
+    <style>
+        /* style de la modale */
+        [popover] {
+            border: none;
+            border-radius: 4px;
+            box-shadow: #63636318 0px 2px 8px 0px;
+            background-color: white;
+            padding: 2rem;
+        }
+
+            [popover] section {
+                display: flex;
+                flex-direction: column;
+            }
+
+        /* ombre autour de la modale */
+        [popover]:-internal-popover-in-top-layer::backdrop {
+            background-color: black;
+            opacity: .3;
+        }
+
+        button {
+            color: white;
+            border: none;
+            border-radius: 4px;
+            background-color: lightgray;
+            cursor: pointer;
+            padding: .5rem;
+        }
+    </style>
+</body>
+</html>
